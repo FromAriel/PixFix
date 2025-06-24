@@ -1,0 +1,5 @@
+v0.1 Initial detector
+- Added detect_scale.py using Python fallback for grid detection to avoid Rust panics.
+- Uses Rust smart_blur when available.
+- Processes all images in a directory and saves scaled versions.
+- Logs per-image results and count of new detections.
