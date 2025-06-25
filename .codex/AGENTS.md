@@ -10,7 +10,7 @@
 Indentation → **always 4 spaces** in `.gd`, `.gdshader`, `.cs`. Never tabs.
 `gdlint` expects `class_name` **before** `extends`.
 
-──────────────────── SECTION: FIRST‑TIME SETUP ────────────────────
+──────────────────── SECTION: GODOT FIRST‑TIME SETUP ────────────────────
 
 1. **Use the built‑in Godot CLI**  (`/usr/local/bin/godot` in this image).
    If you must override, export `GODOT=/full/path/to/godot`.
@@ -50,13 +50,14 @@ dotnet format --verify-no-changes || {
 
 No tabs, no syntax errors, no style violations before commit.
 
-──────────────────── SECTION: VALIDATION LOOP (CI) ────────────────────
+──────────────────── SECTION: GODOT VALIDATION LOOP (CI) ────────────────────
 
 ```bash
 godot --headless --editor --import --quit --path .   # refresh cache
 godot --headless --check-only --quit --path .        # parse .gd
 dotnet build > /tmp/dotnet_build.log                 # compile C# (auto‑skip)
 ```
+For other languages use the appropriate headless validation tools as avaliable to that language and skip validation if not applicable.
 
 Optional tests:
 
